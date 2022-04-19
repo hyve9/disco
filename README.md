@@ -1,17 +1,17 @@
 # Disco
 
-## Build public server
+### Build public server
 
 `make run-ngrok`
 
-## Show QR code
+### Show QR code
 
 `make show-qr`
 
-## Print server location
+### Print server location
 
 `make print-ngrok`
 
-## Cleanup
+### Cleanup
 
 `make cleanup`
