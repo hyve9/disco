@@ -1,0 +1,93 @@
+body {
+  background-color: #101010;
+  color: #ffffff;
+  text-align: justify;
+  font-family: Helvetica;
+  font-size: 42px;
+}
+.header {
+  padding: 10px 16px;
+  width: 20%;
+  height: auto;
+}
+.content {
+  padding: 16px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 20%
+}
+.sticky + .content {
+  padding-top: 102px;
+}
+img {
+  background-color: transparent;
+  width: 50%;
+  height: auto;
+  align-items: center;
+  margin: auto;
+  display: block;
+}
+p {
+  display: none;
+  padding-left: 200px;
+  padding-right: 200px;
+  text-justify: inter-word;
+}
+@keyframes glowing {
+  0% {
+    background-color: #101010;
+    box-shadow: 0 0 3px #101010;
+  }
+  50% {
+    background-color: #8D8D8D;
+    box-shadow: 0 0 10px #8D8D8D;
+  }
+  100% {
+    background-color: #FFFFFF;
+    box-shadow: 0 0 30px #FFFFFF;
+  }
+}
+@keyframes fading {
+  0% {
+    background-color: #101010;
+    box-shadow: 0 0 30px #FFFFFF;
+    opacity: 1;
+  }
+  50% {
+    background-color: #101010;
+    box-shadow: 0 0 10px #8D8D8D;
+    opacity: 0.5;
+  }
+  100% {
+    background-color: #101010;
+    box-shadow: 0 0 3px #101010;
+    opacity: 0;
+  }
+}
+.osc-play {
+  background-color: #101010;
+  border: none;
+  outline: none;
+  text-decoration-color: #8D8D8D;
+}
+.osc-play:active {
+  background-color: #101010;
+  border: none;
+  outline: none;
+  box-shadow: 5 10px 25px rgba(255, 255, 255, .9);
+  animation: glowing 200ms;
+}
+.osc-play:focus {
+  background-color: #101010;
+  border: none;
+  outline: none;
+  box-shadow: 5 10px 25px rgba(255, 255, 255, .9);
+  animation: fading 1500ms;
+}
+.osc-play:hover {
+  background-color: #101010;
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, .6);
+}
