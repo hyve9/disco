@@ -30,9 +30,12 @@ ngrokIP = '127.0.0.1'
 ngrokPort = '4040'
 
 if __name__ == '__main__':
-	if len(sys.argv) != 2:
+	if len(sys.argv) < 2:
 		raise ValueError('Missing QR Code Filepath. \n usage: python makeqr.py <output>')
 	filepath = sys.argv[1]
-	url = getUrl(ngrokIP, ngrokPort, ngrokEndpoint)
+	if len(sys.argv) == 3:
+		url = sys.argv[2]
+	else:
+		url = getUrl(ngrokIP, ngrokPort, ngrokEndpoint)
 	genQRcode(url, filepath)
 	print(filepath)
