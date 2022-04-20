@@ -68,6 +68,8 @@ p {
 }
 .osc-play {
   width: 100%;
+  color: #8D8D8D;
+  text-shadow: 1px 1px 2px #8D8D8D;
   background-color: #101010;
   border: none;
   outline: none;
