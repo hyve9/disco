@@ -3,7 +3,7 @@ body {
   color: #ffffff;
   text-align: justify;
   font-family: Helvetica;
-  font-size: 42px;
+  font-size: 48px;
 }
 .header {
   padding: 10px 16px;
@@ -31,8 +31,8 @@ img {
 }
 p {
   display: none;
-  padding-left: 200px;
-  padding-right: 200px;
+  padding-left: 220px;
+  padding-right: 180px;
   text-justify: inter-word;
 }
 @keyframes glowing {
@@ -67,6 +67,7 @@ p {
   }
 }
 .osc-play {
+  width: 100%;
   background-color: #101010;
   border: none;
   outline: none;

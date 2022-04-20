@@ -8,16 +8,44 @@
 <body>
 	<div class="header">
 		<header>
-			<img src="icons/soundwave.gif" alt="soundon"/>
+			<img src="icons/whoistheringer.png" alt="soundon"/>
+			<!--img src="icons/soundwave.gif" alt="soundon" class="head2"/-->
 		</header>
   </div>
 	<div id="thedisco">
 			<section class="thedisco">
-				<button data-playing="false" class="osc-play" role="switch" aria-checked="false" onclick="vanish()">
+				<button data-playing="false" class="osc-play" role="switch" aria-checked="false" onclick="vanish()" alt="soundon">
 					<span>clickme</span>
-					<img src="icons/whoistheringer.png"/>
+					<img src="icons/soundwave.gif"/>
 				</button>
 				<p class="text-content">
+					Welcome to the other side of the performance.<br><br><br><br><br><br>
+					This is the backdoor of perception.<br><br><br><br>
+					The cipher text of experience.<br><br><br><br>
+					There are a few things we need to get out of the way.<br><br>
+					First, we are going to diffract your awareness. This is a little different than what you might be familiar with.<br><br>
+					We are not going to bring any awareness to your body. We are not going to close our eyes or focus on our breathing.<br><br>
+					Instead, we are going to keep our wits about us. Lean into the control afforded us by our prefrontal cortex.<br><br>
+					After all, we are in the driver's seat.<br><br>
+					We are the one's making all of the decisions. <br><br>
+					<br><br>
+					<br><br>
+					I hope you're not skimming.<br><br>
+					<br><br>
+					<br><br>
+					So we'll bring our attention to the words on the screen. Notice how the lines become symbols, how the symbols exist both
+					as letters and full words, both becoming units of meaning, different units of meaning, stringing again together to form
+					longer, more complex units, and notice your mind scrolling through these units, making enough space in your concentration
+					to hold just enough to string together each piece of meaning to start making meaning of yourself-<br><br>
+					That's right.<br><br>
+					Each thought in your head is held up by the scaffolding of what you see before you, the thoughts of others poured like
+					concrete into the foundation of your own conciousness. Keep scrolling.<br><br><br><br>
+					Keep scrolling.<br><br><br><br>
+					Keep.<br><br><br><br><br><br>
+					Scrolling.<br><br><br><br><br><br><br><br>
+					Notice now how by splitting these units up into separate sections of the screen, you somehow wield more
+					cognitive control over these little blocks of meaning.<br><br><br><br>
+					
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus in hendrerit gravida rutrum quisque non tellus orci. Pretium lectus quam id leo. Curabitur vitae nunc sed velit dignissim sodales. Aliquam ultrices sagittis orci a scelerisque purus semper. Quis eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Dictum fusce ut placerat orci nulla. Viverra mauris in aliquam sem fringilla. A cras semper auctor neque vitae tempus quam pellentesque. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Sed arcu non odio euismod. Vivamus arcu felis bibendum ut tristique. A cras semper auctor neque vitae tempus. Tempor id eu nisl nunc mi. Tortor condimentum lacinia quis vel eros donec ac. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae. Donec ac odio tempor orci dapibus. Ultrices neque ornare aenean euismod elementum nisi. Tincidunt lobortis feugiat vivamus at augue eget arcu. <br><br>
 
 					Et netus et malesuada fames ac turpis egestas. Mauris cursus mattis molestie a. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim cras. Vitae elementum curabitur vitae nunc sed. Condimentum id venenatis a condimentum vitae sapien. Neque ornare aenean euismod elementum nisi quis. Lacus viverra vitae congue eu consequat ac felis donec et. Morbi quis commodo odio aenean sed adipiscing. Morbi leo urna molestie at elementum eu facilisis. Ultricies mi quis hendrerit dolor magna eget. Malesuada fames ac turpis egestas. <br><br>
@@ -98,8 +126,9 @@
 			oscillator = audioCtx.createOscillator();
 
 			const waves = ['sine', 'triangle', 'sawtooth', 'square'];
+			// const waves = ['sine'];
 			// C2, G2, E3, B3, G4, D5, F6
-			const freqs = [65.5, 98.0, 164.8, 246.9, 392.0, 587.3, 1499];
+			const freqs = [65.41, 98.0, 164.81, 246.94, 392.0, 587.33, 1479.98];
 
 			oscillator.type = waves[Math.floor(Math.random()*waves.length)];
 			oscillator.frequency.value = freqs[Math.floor(Math.random()*freqs.length)]; // value in hertz
