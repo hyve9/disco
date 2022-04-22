@@ -119,7 +119,7 @@
 			var docheight = getDocHeight();
 			var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
 			var trackLength = docheight - winheight;
-			var pctScrolled = scrollTop/trackLength;
+			var pctScrolled = Math.pow(scrollTop/trackLength, 2);
 			return pctScrolled;
 		}
 
