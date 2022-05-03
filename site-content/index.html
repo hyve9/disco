@@ -79,6 +79,9 @@
 					<br><br>
 					<br><br>
 					<br><br>
+					<br><br>
+					<br><br>
+					<br><br>
 					Don't turn it off.<br><br><br><br><br><br>
 				</p>
 			</section>
@@ -123,7 +126,7 @@
 			var docheight = getDocHeight();
 			var scrollTop = window.pageYOffset || (document.documentElement || document.body.parentNode || document.body).scrollTop;
 			var trackLength = docheight - winheight;
-			var pctScrolled = Math.min(Math.pow(scrollTop/trackLength, 4));
+			var pctScrolled = Math.min(Math.pow(scrollTop/trackLength, 4), 1);
 			return pctScrolled;
 		}
 
