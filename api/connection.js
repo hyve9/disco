@@ -44,7 +44,7 @@ const updateFilter = (req, res) => {
   let updateQuery = `update filters
     set gain = '${filter.gain}'
     where freq = ${filter.freq}`
-
+  console.log(updateQuery)
   pool.query(updateQuery, (err, result)=>{
     if (err) {
       throw err
