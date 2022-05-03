@@ -1,6 +1,6 @@
 NETWORK=disco
 SITE=website
-AUTH_TOKEN=$(shell cat ./secrets/ngrok)
+AUTH_TOKEN=$(shell pass show dev/ngrok.io)
 QR="qrcode.png"
 
 network: 
