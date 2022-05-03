@@ -11,13 +11,8 @@ run-postgres: network
 run-node: run-postgres
 	npm start
 
-stop-node: run-node
-	npm stop
-
-build-api: run-postgres
-	docker build -t hyve9/discoapi .
-
 cleanup:
+	-npm stop
 	-docker kill pg_api
 	-docker rm pg_api
 	-docker network remove $(NETWORK)
