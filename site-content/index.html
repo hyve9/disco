@@ -87,6 +87,7 @@
 			</section>
 	</div>
 
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 	<script type="text/javascript">
 		console.clear();
 
@@ -170,6 +171,16 @@
 			if (this.dataset.playing === 'false') {
 				// start oscillator
 				oscillator.start(audioCtx.currentTime);
+				axios.post('http://localhost:3000/api/filter', {
+					freq: oscillator.frequency.value,
+					gain: gainNode.gain.value
+				})
+				.then(function (response) {
+    			console.log(response);
+  			})
+  			.catch(function (error) {
+    			console.log(error);
+  			});
 				this.dataset.playing = 'true';
 			}
 			//if track is playing pause it
@@ -186,6 +197,15 @@
 		window.addEventListener('scroll', function() {
 			if(audioCtx) {
 				gainNode.gain.setValueAtTime(amountscrolled(), audioCtx.currentTime);
+				axios.put(`http://localhost:3000/api/filter/${oscillator.frequency.value}`, {
+					gain: gainNode.gain.value
+				})
+				.then(function (response) {
+    			console.log(response);
+  			})
+  			.catch(function (error) {
+    			console.log(error);
+  			});
 				console.log(amountscrolled());
 				console.log(gainNode.gain)
 			}
@@ -195,6 +215,17 @@
 	    	header.classList.remove("sticky");
   		}
 		}, false);
+
+		window.addEventListener('beforeunload', function() {
+			axios.delete(`http://localhost:3000/api/filter/${oscillator.frequency.value}`)
+			.then(function (response) {
+				console.log(response);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+		});
+
 
 	</script>
 
