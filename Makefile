@@ -2,6 +2,7 @@ NETWORK=disco
 SITE=website
 AUTH_TOKEN=$(shell pass show dev/ngrok.io)
 QR="qrcode.png"
+AUDIO="audio/type.wav"
 
 network: 
 	-docker network create $(NETWORK)
@@ -19,7 +20,11 @@ print-ngrok:
 	curl 0.0.0.0:4040/api/tunnels | jq ".tunnels[0].public_url"
 show-qr: run-ngrok
 	python makeqr.py $(QR)
-	gwenview $(QR) 
+	gwenview $(QR)
+
+player:
+	pasuspender -- disco-player.py [URL] $(AUDIO)
+
 cleanup:
 	-docker kill ngrok $(SITE)
 	-docker rm ngrok $(SITE)
