@@ -20,6 +20,7 @@ def getFreqs(url):
 def filter(url):
     freqs = getFreqs(url)
     avg_gain = min(sum([freqs[x]['gain'] for x in range(len(freqs))]), 1)
+    print('Gain sum = ' + str(avg_gain))
     fs = 44100 # Sample rate
     fc = max(fs/2 - np.floor(fs/2 * avg_gain), 30) - 10  # Cutoff
     fstop = min((fc + 500), fs/2)  # End the transition band
@@ -27,8 +28,8 @@ def filter(url):
     #fstop = 10500
     ripple = 3  # 3dB ripple
     atten = 60 # 60dB attenuation
-    #print('cutoff = ' + str(fc))
-    #print('transition stop = ' + str(fstop))
+    print('cutoff = ' + str(fc))
+    print('transition stop = ' + str(fstop))
     # Get the smallest order for the filter
     order, _ = signal.ellipord(fc, fstop, ripple, atten, fs=fs)
 
@@ -88,9 +89,6 @@ if __name__ == '__main__':
     while stream.is_active():
         b, a = filter(URL)
         time.sleep(1)
-        # Will this loop audio? I hope!
-        if not stream.is_active():
-            stream.start_stream()
 
     # stop stream (6)
     stream.stop_stream()
