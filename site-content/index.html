@@ -187,7 +187,7 @@
 					freq: oscillator.frequency.value
 				})
 				.then(function (response) {
-					for (const elem of response) {
+					for (const elem of response.data) {
 						console.log(elem);
 					}
 				})
@@ -210,7 +210,7 @@
 		window.addEventListener('scroll', function() {
 			if(audioCtx) {
 				gainNode.gain.setValueAtTime(amountscrolled(), audioCtx.currentTime);
-				axios.put(`http://${host}/api/filters/${oscillator.frequency.value}`, {
+				axios.put(`http://${host}/api/filters/${oscId}`, {
 					freq: oscillator.frequency.value,
 					gain: gainNode.gain.value
 				})
@@ -231,7 +231,7 @@
 		}, false);
 
 		window.addEventListener('beforeunload', function() {
-			axios.delete(`http://${host}/api/filters/${oscillator.frequency.value}`)
+			axios.delete(`http://${host}/api/filters/${oscId}`)
 			.then(function (response) {
 				console.log(response);
 			})
