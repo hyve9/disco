@@ -183,12 +183,11 @@
   			.catch(function (error) {
     			console.log(error);
   			});
-				axios.get(`http://${host}/api/filters`, {
-					freq: oscillator.frequency.value
-				})
+				axios.get(`http://${host}/api/filters/${oscillator.frequency.value}`)
 				.then(function (response) {
 					for (const elem of response.data) {
-						console.log(elem);
+						console.log(elem.id);
+						console.log(elem.freq);
 					}
 				})
 				.catch(function (error) {
