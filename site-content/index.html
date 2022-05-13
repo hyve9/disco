@@ -185,6 +185,7 @@
   			});
 				axios.get(`http://${host}/api/filters/${oscillator.frequency.value}`)
 				.then(function (response) {
+					console.log(response.data)
 					for (const elem of response.data) {
 						if(elem.freq == oscillator.frequency.value) {
 							oscId = elem.id
