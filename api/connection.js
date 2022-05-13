@@ -33,9 +33,11 @@ const createFilter = (req, res) => {
 
   pool.query(insertQuery, (err, result)=>{
     if (err) {
-      throw err
+      console.log(updateQuery)
+      console.log(err)
+    } else {
+      res.status(200).json(result.rows)
     }
-    res.status(200).json(result.rows)
   })
 }
 
@@ -47,9 +49,11 @@ const updateFilter = (req, res) => {
 
   pool.query(updateQuery, (err, result)=>{
     if (err) {
-      throw err
+      console.log(updateQuery)
+      console.log(err)
+    } else {
+      res.status(200).json(result.rows)
     }
-    res.status(200).json(result.rows)
   })
 }
 
@@ -58,9 +62,11 @@ const deleteFilter = (req, res) => {
 
   pool.query(insertQuery, (err, result) => {
     if (err) {
-      throw err
+      console.log(insertQuery)
+      console.log(err)
+    } else {
+      res.status(200).json(result.rows)
     }
-    res.status(200).json(result.rows)
   })
 }
 
