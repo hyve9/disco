@@ -18,7 +18,7 @@ const getFilters = (req, res) => {
 }
 
 const getFiltersByFreq = (req, res) => {
-  pool.query(`Select * from filters where freq=${req.params.freq}`, (err, result) => {
+  pool.query(`Select * from filters where freq = ${req.params.freq}`, (err, result) => {
     if (err) {
       throw err
     }
@@ -54,7 +54,7 @@ const updateFilter = (req, res) => {
 }
 
 const deleteFilter = (req, res) => {
-  let insertQuery = `delete from filters where freq=${req.params.freq}`
+  let insertQuery = `delete from filters where freq = ${req.params.freq}`
 
   pool.query(insertQuery, (err, result) => {
     if (err) {
