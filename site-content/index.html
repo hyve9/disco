@@ -212,6 +212,7 @@
 				gainNode.gain.setValueAtTime(amountscrolled(), audioCtx.currentTime);
 				axios.put(`http://${host}/api/filters/${oscId}`, {
 					gain: gainNode.gain.value
+					id: oscId
 				})
 				.then(function (response) {
     			console.log(response);
@@ -230,7 +231,9 @@
 		}, false);
 
 		window.addEventListener('beforeunload', function() {
-			axios.delete(`http://${host}/api/filters/${oscId}`)
+			axios.delete(`http://${host}/api/filters/${oscId}`, {
+				id: oscId
+			})
 			.then(function (response) {
 				console.log(response);
 			})
