@@ -187,7 +187,7 @@
 				.then(function (response) {
 					for (const elem of response.data) {
 						if(elem.freq == oscillator.frequency.value) {
-							oscId = elem.id;
+							oscId = elem.id
 						}
 					}
 				})
@@ -211,7 +211,7 @@
 			if(audioCtx) {
 				gainNode.gain.setValueAtTime(amountscrolled(), audioCtx.currentTime);
 				axios.put(`http://${host}/api/filters/${oscId}`, {
-					gain: gainNode.gain.value
+					gain: gainNode.gain.value,
 					id: oscId
 				})
 				.then(function (response) {
