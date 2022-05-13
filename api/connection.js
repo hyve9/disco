@@ -29,7 +29,8 @@ const getFiltersByFreq = (req, res) => {
 const createFilter = (req, res) => {
   const filter = req.body;
   let insertQuery = `insert into filters(freq, gain)
-  values(${filter.freq}, '${filter.gain}')`
+  values(${filter.freq}, '${filter.gain}')
+  returning id`
 
   pool.query(insertQuery, (err, result)=>{
     if (err) {

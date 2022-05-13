@@ -135,7 +135,7 @@
 		const host = "ec2-3-230-239-70.compute-1.amazonaws.com";
 		let oscillator;
 		let gainNode;
-		let oscId;
+		let oscId = 0;
 
 		// play pause audio
 		playButton.addEventListener('click', function() {
@@ -179,21 +179,13 @@
 				})
 				.then(function (response) {
     			console.log(response.data);
+					oscId = response.data.id;
+					console.log('Current oscillator ID:')
+					console.log(oscId)
   			})
   			.catch(function (error) {
     			console.log(error);
   			});
-				axios.get(`http://${host}/api/filters/${oscillator.frequency.value}`)
-				.then(function (response) {
-					console.log(response.data)
-					for (const elem of response.data) {
-						if(elem.freq == oscillator.frequency.value) {
-							oscId = elem.id
-						}
-					}
-					console.log('Current oscillator ID:')
-					console.log(oscId)
-				})
 				.catch(function (error) {
     			console.log(error);
   			});
