@@ -188,6 +188,7 @@
 					for (const elem of response.data) {
 						console.log(elem.id);
 						console.log(elem.freq);
+						oscId = elem.id;
 					}
 				})
 				.catch(function (error) {
