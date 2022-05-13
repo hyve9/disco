@@ -183,6 +183,17 @@
   			.catch(function (error) {
     			console.log(error);
   			});
+				axios.get(`http://${host}/api/filters`, {
+					freq: oscillator.frequency.value
+				})
+				.then(function (response) {
+					for (const elem of response) {
+						console.log(elem);
+					}
+				})
+				.catch(function (error) {
+    			console.log(error);
+  			});
 				this.dataset.playing = 'true';
 			}
 			//if track is playing pause it

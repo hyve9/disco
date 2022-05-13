@@ -43,7 +43,7 @@ const updateFilter = (req, res) => {
   let filter = req.body;
   let updateQuery = `update filters
     set gain = '${filter.gain}'
-    where freq = ${filter.freq}`
+    where id = ${filter.id}`
 
   pool.query(updateQuery, (err, result)=>{
     if (err) {
@@ -54,7 +54,7 @@ const updateFilter = (req, res) => {
 }
 
 const deleteFilter = (req, res) => {
-  let insertQuery = `delete from filters where freq = ${req.params.freq}`
+  let insertQuery = `delete from filters where id = ${req.params.id}`
 
   pool.query(insertQuery, (err, result) => {
     if (err) {
